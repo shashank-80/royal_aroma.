@@ -225,10 +225,13 @@ elif page == "Analytics & Fragrance Trends":
     st.markdown("<h2 class='luxury-title'>Maison Informatics Analytics</h2>", unsafe_allow_html=True)
     st.markdown("Global market statistics and composition density patterns derived from the database.")
     
+    # Custom Luxury Gold Colors banaye gaye hain
+    luxury_colors = ['#D4AF37', '#F3D065', '#B38F24', '#FFF8D6', '#997A00']
+    
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("#### Brand Formulation Distribution Matrix")
-        fig_brand = px.pie(df_perfumes, names='Brand', color_discrete_sequence=px.colors.sequential.Gold)
+        fig_brand = px.pie(df_perfumes, names='Brand', color_discrete_sequence=luxury_colors)
         fig_brand.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#FFF')
         st.plotly_chart(fig_brand, use_container_width=True)
         
@@ -239,10 +242,9 @@ elif page == "Analytics & Fragrance Trends":
         st.plotly_chart(fig_price, use_container_width=True)
         
     st.markdown("#### Scent Performance Metrics (Longevity vs. Rating Dynamics)")
-    fig_scatter = px.scatter(df_perfumes.sample(500), x='Price', y='Rating', color='Longevity', size='Rating', color_discrete_sequence=px.colors.sequential.Amber)
+    fig_scatter = px.scatter(df_perfumes.sample(500), x='Price', y='Rating', color='Longevity', size='Rating', color_discrete_sequence=luxury_colors)
     fig_scatter.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#FFF')
     st.plotly_chart(fig_scatter, use_container_width=True)
-
 # ==========================================
 # PAGE 5: USER WISHLIST
 # ==========================================
