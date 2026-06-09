@@ -180,6 +180,9 @@ elif page == "AI Perfume Predictor":
 # ==========================================
 # PAGE 3: THE PERFUME EXPLORER
 # ==========================================
+# ==========================================
+# PAGE 3: THE PERFUME EXPLORER
+# ==========================================
 elif page == "The Perfume Explorer":
     st.markdown("<h2 class='luxury-title'>The Imperial Exhibition Room</h2>", unsafe_allow_html=True)
     
@@ -205,8 +208,12 @@ elif page == "The Perfume Explorer":
     
     # Display elements in structured loop grids
     for idx, row in filtered.head(20).iterrows():
+        # Yahan image URL ko alag se nikaal liya gaya hai taaki koi error na aaye
+        img_url = get_perfume_image(row['Perfume_ID']) 
+        
         st.markdown(f"""
         <div class="perfume-card">
+            <img src="{img_url}" style="width:100%; height:250px; object-fit:cover; border-radius:8px; margin-bottom:15px; border: 1px solid rgba(212, 175, 55, 0.3);">
             <span style="color:#D4AF37; font-size:11px; font-weight:bold; letter-spacing:1px;">{row['Brand'].upper()}</span>
             <h3 style="margin:5px 0 0 0; color:#FFF; font-family:'Cinzel';">{row['Perfume_Name']}</h3>
             <p style="color:#CCC; font-size:13px; margin:8px 0;">{row['Description']}</p>
