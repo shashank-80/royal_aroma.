@@ -58,7 +58,7 @@ with st.sidebar:
             user_input = st.text_input("Username")
             pass_input = st.text_input("Password", type="password")
             name_input = st.text_input("Display Name") if auth_mode == "Sign Up" else ""
-            submit_auth = st.form_submit_with_button("Execute Authentication")
+            submit_auth = st.form_submit_button("Execute Authentication")
             
             if submit_auth:
                 if auth_mode == "Login":
