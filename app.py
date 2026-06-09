@@ -28,6 +28,16 @@ def load_recommender():
     return FragranceRecommender()
 
 recommender_engine = load_recommender()
+# Luxury Images Assign Karne Ka Function
+def get_perfume_image(perfume_id):
+    images = [
+        "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1595532542520-50ca16212879?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=400&q=80"
+    ]
+    return images[int(perfume_id) % len(images)]
 df_perfumes = recommender_engine.df
 
 # Warm-cache session configurations
