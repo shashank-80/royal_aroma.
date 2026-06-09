@@ -36,7 +36,7 @@ if 'user' not in st.session_state:
 
 # Custom Premium Navigation Top Header Bar
 st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>ROYAL AROMA</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-family:Cinzel; letter-spacing: 3px; color:#AA8822;'>HAUTE PARFUMERIE AI ARCHITECT</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-family:Montserrat; letter-spacing: 2px; color:#AA8822; font-size:14px;'>Your Personal AI Fragrance Guide</p>", unsafe_allow_html=True)
 st.markdown("---")
 
 # Navigation Routing Matrix Sidebar
